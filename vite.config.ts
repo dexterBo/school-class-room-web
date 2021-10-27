@@ -8,6 +8,9 @@ function pathResolve(dir: string) {
 }
 
 export default defineConfig({
+  define: {
+    urlPrefix: JSON.stringify('www.xienihong.space'),
+  },
   resolve: {
     alias: [
       {
