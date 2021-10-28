@@ -1,14 +1,18 @@
 <template>
-  <n-message-provider>
-    <router-link to="/home"><NButton>Go to Home</NButton></router-link>
-    <router-link to="/list"><NButton>Go to List</NButton></router-link>
-    <router-view></router-view>
-  </n-message-provider>
+ <div id="app">
+    <el-config-provider :locale="locale">
+      <router-link to="/home"><el-button>Go to Home</el-button></router-link>
+      <router-link to="/list"><el-button>Go to List</el-button></router-link>
+      <router-view></router-view>
+    </el-config-provider>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { NButton } from "naive-ui";
-import { NMessageProvider } from "naive-ui";
+import { ElConfigProvider } from 'element-plus'
+import zhCn from 'element-plus/lib/locale/lang/zh-cn'
+
+const locale = zhCn
 
 </script>
 

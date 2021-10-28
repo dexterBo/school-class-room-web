@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path';
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import vue from '@vitejs/plugin-vue'
 
 
@@ -8,9 +10,6 @@ function pathResolve(dir: string) {
 }
 
 export default defineConfig({
-  define: {
-    urlPrefix: JSON.stringify('www.xienihong.space'),
-  },
   resolve: {
     alias: [
       {
@@ -24,5 +23,10 @@ export default defineConfig({
     ],
     dedupe: ['vue'],
   },
-  plugins: [vue()]
+  plugins: [
+    vue(),
+    Components({
+      resolvers: [ElementPlusResolver()],
+    }),
+  ]
 })

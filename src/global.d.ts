@@ -75,3 +75,10 @@ declare interface Pagination<T = JSONObject> {
 }
 
 declare type YN = 'Y' | 'N';
+
+
+declare interface ResponseData<T = any> {
+  code?: string;
+  message?: string;
+  data?: T;
+}
